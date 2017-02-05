@@ -1,0 +1,51 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam2-grading/submissions/agrawl10
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts
+qid is hard-01
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts/tests/hard-01/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam2-grading/submissions/agrawl10/grade-.Y89
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o hard.o hard.cpp
+hard.cpp: In function ‘void alternatingSplit(LinkedList*, LinkedList*, LinkedList*)’:
+hard.cpp:23:24: error: invalid user-defined conversion from ‘LinkedList*’ to ‘LinkedList&’ [-fpermissive]
+  int data = getSize(lst);
+                        ^
+In file included from hard.cpp:1:0:
+linkedlist.h:37:2: note: candidate is: LinkedList::LinkedList(int) <near match>
+  LinkedList(int d);
+  ^~~~~~~~~~
+linkedlist.h:37:2: note:   conversion of argument 1 would be ill-formed:
+hard.cpp:23:24: error: invalid conversion from ‘LinkedList*’ to ‘int’ [-fpermissive]
+  int data = getSize(lst);
+                        ^
+hard.cpp:23:24: error: invalid conversion from ‘LinkedList*’ to ‘int’ [-fpermissive]
+In file included from hard.cpp:1:0:
+linkedlist.h:37:2: note:   initializing argument 1 of ‘LinkedList::LinkedList(int)’
+  LinkedList(int d);
+  ^~~~~~~~~~
+hard.cpp:23:24: error: conversion to non-const reference type ‘class LinkedList&’ from rvalue of type ‘LinkedList’ [-fpermissive]
+  int data = getSize(lst);
+                        ^
+hard.cpp:5:5: note:   initializing argument 1 of ‘int getSize(LinkedList&)’
+ int getSize(LinkedList &mylist)
+     ^~~~~~~
+<builtin>: recipe for target 'hard.o' failed
+make: *** [hard.o] Error 1
+Could not compile hard.o.
+
+Grade for question : 0/100
+
+
+~ ~ ~
+
+Grade: 0
+
+Details:
+test,grade
+_compiled,0

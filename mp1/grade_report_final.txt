@@ -1,0 +1,8 @@
+Grading r961 by quanwan2 committed on Thu Aug 25 08:41:41 CDT 2016
+Monad Autograder
+Testing mp1 at 2016-09-01 01:23:12
+
+"Now let me erase this before you all copy it down." ~ Alexey Stepanov
+
+Setting up test environment...
+Error: /dev/shm/cs225student/autograder/temp/mp1/Makefile does not exist.

@@ -1,0 +1,9 @@
+Input 1: 1 (not a prime number, insofar as how mathematicians define it)
+Input 2: 2 (the only even prime -- what rule do we make of it?)
+Input 3: 59 (just checking).
+
+The outputs should be:
+
+1: Nothing
+2: Prime
+3: Prime

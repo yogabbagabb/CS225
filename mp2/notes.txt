@@ -1,0 +1,5 @@
+1) I understood that c++ does not define != or == by default
+
+yet it is possible to check for x != NULL? How come?
+
+

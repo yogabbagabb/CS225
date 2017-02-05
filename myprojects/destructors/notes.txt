@@ -1,0 +1,53 @@
+A POD (plain old data type) is a class in which no constructors, no destructors and no 
+variables that are of the type pointer to variable exist. PODs also have no
+variables that are not  themselves PODs. These types are worth mentionoing because
+they are automatically destroyed.
+
+_____
+Not understood
+https://chara.cs.illinois.edu/cs225/lectures/readings/construct.pdf
+This is not like the default constructor, where...
+
+_______
+The reason why the copy constructor must have this (&) tag in its parameter signature
+is that if we passed a parameter by value to the copy constructor, then the copy usable
+in the constructor will have been necessarily created by the copy instructor.
+
+But how can that work when we haven't yet defined what the copy is!? In fact, the copy 
+is desgined by the copy constructor
+_______
+
+One could theoretically have in the parameter declaration (SomeObject* something)
+and oblige the passage of a memory address -- ie a pointer.
+
+SomeObject* is a pointer. In what way do we oblige the passage of a memory address?
+The pointer's value is the memory address of the actual value of SomeObject. TIsw hy
+
+____
+
+IMPORTANT NOTE FOR POINTERS:
+does delete actually delete the member data? 
+I thought it just frees it?
+see pg. 12 of the above link -- before destroying
+Yes, they clarify: by "delete", we mean to return for reclamation to the system memory
+_____
+
+The sequence of steps in a destructor:
+
+1) Free any resources the object itself took up (this never happens in our class)
+2) Free any member variables resources'. If of a POD type ( including pointers themselve), then the object will be destructed by the empty destructor
+-- if the object is not a POD, then the destructor of the object will be implicitly called
+by the destructor of this.
+3) Return the memory block of this to the system for reclamation.
+__
+
+My_Array first;           // initialization by default constructor
+My_Array second(first);   // initialization by copy constructor
+My_Array third = first;   // Also initialization by copy constructor
+second = third;           // assignment by copy assignment operator
+
+____
+This leads to a golden rule: if the system ever aquires resources of its own
+
+only then and only then must it have a non-default destructor
+

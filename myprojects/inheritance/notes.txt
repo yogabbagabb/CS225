@@ -1,0 +1,34 @@
+1) Private variables and functions of bases calsses cannot be used by derived classes
+	- if you do want to provide access to the derived clas,s use the keyword protected.
+2) In the constructor, one calls a base class by appending the call to the initializer list.
+3) If no base constructor is specified, the default one (if it doesn't exist, Compiler error) is called
+4)From the initializer list, members are ALWAYS initialized by default. So you might as well assign them the first time from the initializer list, rather than have them defaultly assigned there and then reassigned.
+
+Dynamic Binding:
+
+By default in C++, the declared type of a pointer dictates the methods it uses
+
+Coord * point = new SpecialCoord ();
+point -> doSomething()
+
+will call the doSomething() method of Coord, even if SpecialCoord has one such method
+
+Virtual Methods:
+
+Prepend a method with virtual in the header file if you want the function
+to be dynamically evaluated at runtime rather than statically evaluated at C time
+
+This is only necessary to do for the base class method and all succesive methods will be virtual. good practice to continue declaring the successive ones (down the family) as virtual, though.
+
+From https://chara.cs.illinois.edu/cs225/lectures/readings/inherit.pdf
+
+Some notes from: http://www.mycourserating.com/university=uiuc/lecture_notes
+4. Virtual method return type cannot be overwritten
+5. Virtual functions need to implement in base class. Otherwise, the class becomes an
+abstract base class which contains at least one pure virtual function
+
+
+Some finer nuances:
+- You can have intermediate classes implement some components of a pure virtual base and, yet, these
+intermediate classes can still be pure virtual themselves.
+- pure virtual and virtual are only mentioned in declarations -- never elsewhere

@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+
+// see piazaa post 2163 for reference to lecture
+
+/* int * ss;
+*ss  = 3; */
+// This can produce a segmentation fault in compilers; it depends. 
+// The call to int * ss sometimes assigns ss to a memory location outside
+// the allocated memory of the memory program. The OS will shut down 
+// because the program tries to access memory it doesn't have.
+
+
+/* int * s = NULL;
+cout << *s << endl; */
+// This produces a segmentation fault
+
+int * p, *q;
+p = new int;
+q = p;
+*q = 8;
+cout << q << endl;
+delete p;
+cout << "watch" << *p << endl;
+cout << q << endl;
+cout << p << endl;
+*p = 12;
+q = NULL;
+
+cout << "start" << endl;
+cout << p << endl;
+cout << q << endl;
+cout << *p << endl;
+
+
+/*
+This shows that:
+http://stackoverflow.com/questions/5002055/is-the-pointer-guaranteed-to-preserve-its-value-after-delete-in-c
+the pointer is not guaranteed to preserve its value
+the memory location is guaranteed to be preserved after a call to delete
+*/
+}

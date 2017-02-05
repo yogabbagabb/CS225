@@ -1,0 +1,9 @@
+I can't say this better
+
+Template classes need access to the implementation for compilation. Every time a different class is
+ used as the template, the code must be compiled to support containing it. For example, if you want to
+ make a List<int>, the compiler must take the generic List<T> implementation code and replace all the Ts
+ with ints inside it, and compile the result (this process is called template instantiation). Our solution
+  to this is to #include "list.cpp" at the bottom of our list.h file. This ensures that whenever
+  a client includes our header file, he/she also gets the implementation as well
+ for compilation purposes (there are other solutions, but this is how we will solve it in this course).

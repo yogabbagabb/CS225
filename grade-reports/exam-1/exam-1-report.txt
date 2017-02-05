@@ -1,0 +1,25 @@
+Exam report for Aahan Agrawal
+=============================
+
+Scores
+------
+
+  Problem                   Points
+  ----------------------- --------
+  constructors-2b                4
+  constructors-3c                4
+  km-arrays-1d                   0
+  km-firstclass-1a               4
+  km-pointersintro-2c            0
+  passbyvalue-4a                 4
+  km-declarationopts-1a          2
+  km-makefile-1c                 4
+  vector                        18
+
+Total score: 40/50 (80%)
+
+Code Problem Test Output
+------------------------
+
+See `tests.txt` (or `tests-1.txt` and `tests-2.txt`) for autograder test
+outputs.

@@ -1,0 +1,61 @@
+
+    int dis = findLength(startPoint, endPoint);
+
+    ListNode ** prevArray = new ListNode*[length];
+    ListNode * curr = startPoint;
+
+    int i = 0;
+    do
+    {
+        prevArray[i] = curr-> prev;
+        i++;
+        curr = curr->next;
+    }while (i < dis);
+
+    curr = startPoint;
+    i = 0;
+    do
+    {
+        curr->prev = curr->next;
+        curr = curr->next;
+        i++;
+    }while (i < dis);
+
+    curr = startPoint;
+    i = 0;
+
+    ListNode * holder;
+    do
+    {
+
+        holder = curr->next;
+        curr->next = prevArray[i];
+
+        i++;
+        curr = holder;
+    }while (i < dis);
+
+
+
+
+
+    int dis = findLength(startPoint, endPoint);
+    ListNode* curr = startPoint;
+    int i = 0;
+    T * array = new T [dis];
+
+    while (i < dis)
+    {
+        array[i] = *curr.data;
+        curr = curr->next;
+        i++;
+    }
+
+    i = 0;
+    curr = startPoint;
+    while (i < dis)
+    {
+        *curr = *array[dis-1-i];
+        curr = curr->next;
+        i++;
+    }

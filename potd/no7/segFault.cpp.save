@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+
+int * x;
+cout << &x << endl;
+cout << x << endl;
+
+{
+	int a = 3;
+	x = &a;
+}
+
+cout << x << endl;
+
+*x = 2;
+}
+
+/*
+x initially points to garbage. It then is made to point to a memory address
+that gets garbaged after the inner braces are passed through. Deferencing it
+can cause errors.
+*/

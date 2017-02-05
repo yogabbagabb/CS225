@@ -1,0 +1,10 @@
+int main()
+{
+int * x = new int (3);
+int p = *x;
+
+/*
+This creates a memory leak, because the memory allocated from the heap
+from the call to line 3 isn't deallocated back to the heap.	
+ */
+}
